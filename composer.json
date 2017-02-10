@@ -1,0 +1,16 @@
+{
+    "name": "lvieira/silex-arango-skeleton",
+    "description": "Basic skeleton for applications using ArangoDB",
+    "type": "project",
+    "require": {
+        "silex/silex": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas S. Vieira",
+            "email": "lucassouzavieiraengcomp@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
