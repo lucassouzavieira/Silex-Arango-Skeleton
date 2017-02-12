@@ -10,13 +10,13 @@ api:
   version: v1
 
 arangodb:
-  connection:
-    database: dbname
-    host: 127.0.0.1
-    port: 8529
-    user: arango-user
-    password: arango-password
-    connection: Close
-    timeout: 3
-    reconnect: true
-    create: true
+  database: dbname
+  host: 127.0.0.1
+  port: 8529
+  user: arango-user
+  password: arango-password
+  auth: Basic
+  connection: Close
+  timeout: 3
+  reconnect: true
+  create: true
