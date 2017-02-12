@@ -2,7 +2,7 @@
 
 application:
   name: Skeleton
-  version: 0.1.0-alpha
+  version: version
   debug: true
 
 api:

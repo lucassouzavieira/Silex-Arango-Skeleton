@@ -14,12 +14,11 @@ use Symfony\Component\Yaml\Yaml;
 
 $app = new Application();
 
-
 $routes = Yaml::parse(file_get_contents('routes/routes.yml'));
 $config = Yaml::parse(file_get_contents('app.yml'));
 
-$app['debug'] = $config['application']['debug'];
 $app['config'] = $config;
+$app['debug'] = $app['config']['application']['debug'];
 
 /**
  * Services

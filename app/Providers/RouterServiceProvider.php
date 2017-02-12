@@ -19,15 +19,18 @@ class RouterServiceProvider implements ServiceProviderInterface
     }
 
     /**
+     * Register all aplication routes
      * @param Container $app
      */
     public function register(Container $app)
     {
         $routes = $this->routes;
+        $prefix = $app['config']['api']['prefix'] . '/';
+        $version = $app['config']['api']['version'];
 
         foreach ($routes as $routeName => $params){
             $method = (string) $params['method'];
-            $app->$method($routeName, $params['to']);
+            $app->$method( $prefix . $version  . $routeName, $params['to']);
         }
     }
 }
