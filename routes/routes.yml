@@ -1,0 +1,6 @@
+# Routes configuration file
+
+/:
+  method: get
+  to: home:index
+

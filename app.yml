@@ -1,0 +1,21 @@
+# Aplication configuration file
+
+application:
+  name: Skeleton
+  version: 0.1.0-alpha
+  debug: true
+
+api:
+  prefix: api
+  version: v1
+
+arangodb:
+  connection:
+    endpoint: http://127.0.0.1
+    port: 8529
+    user: arango-user
+    password: arango-password
+    connection: Close
+    timeout: 3
+    reconnect: true
+    create: true
