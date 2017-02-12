@@ -11,6 +11,6 @@ Basic skeleton for applications using ArangoDB
 
 ### Installation
 * Clone this repository  
-* Set `public/index` as web root of your application  
+* Set `public` folder as web root of your application  
 * Copy `app.example.yml` to `app.yml` and add your configurations  
 * Let's code !
