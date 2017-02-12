@@ -2,11 +2,12 @@
 
 namespace App\Controllers;
 
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return "Hello!";
+        return 'Welcome to Silex !';
     }
 }

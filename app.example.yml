@@ -11,7 +11,8 @@ api:
 
 arangodb:
   connection:
-    endpoint: http://127.0.0.1
+    database: dbname
+    host: 127.0.0.1
     port: 8529
     user: arango-user
     password: arango-password
