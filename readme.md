@@ -5,6 +5,7 @@ Basic skeleton for applications using ArangoDB
 
 ### Dependencies
 * ArangoDB ODM for PHP  
+* [Arango Provider](https://github.com/evaldobarbosa/arango-provider.git) (Thanks to [evaldobarborsa](https://github.com/evaldobarbosa))
 * Symfony YAML
 
 

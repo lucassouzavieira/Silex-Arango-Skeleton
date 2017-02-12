@@ -8,7 +8,7 @@ use Silex\Application;
  * Class Controller
  * @package App\Controllers
  */
-class Controller
+abstract class Controller
 {
     protected $app;
 
