@@ -30,6 +30,7 @@ class RouterServiceProvider implements ServiceProviderInterface
 
         foreach ($routes as $routeName => $params){
             $method = (string) $params['method'];
+            $method = mb_strtolower($method);
             $app->$method( $prefix . $version  . $routeName, $params['to']);
         }
     }
