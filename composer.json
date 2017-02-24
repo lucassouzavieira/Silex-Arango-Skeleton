@@ -22,5 +22,10 @@
             "email": "lucassouzavieiraengcomp@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "scripts": {
+        "post-install-cmd": [
+            "cp app.example.yml app.yml"
+        ]
+    },
+    "minimum-stability": "stable"
 }
