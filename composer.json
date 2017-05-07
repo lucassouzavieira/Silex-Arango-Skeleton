@@ -3,6 +3,7 @@
     "description": "Basic skeleton for applications using ArangoDB",
     "type": "project",
     "require": {
+        "php": ">=7.0.18",
         "silex/silex": "^2.0",
         "triagens/arangodb": "^3.1",
         "symfony/yaml": "^3.2",
