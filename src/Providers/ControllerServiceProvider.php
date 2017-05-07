@@ -14,7 +14,7 @@ class ControllerServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $app)
     {
-        $app['home'] = function (Container $app){
+        $app['home'] = function (Container $app) {
             return new HomeController($app);
         };
     }
