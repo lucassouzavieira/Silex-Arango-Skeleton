@@ -19,6 +19,11 @@ Basic skeleton for applications using ArangoDB
 * Add your custom configurations to `app.yml` 
 * Let's code !
 
+### Custom configurations  
+
+In file `app.yml` you can add your own configurations. 
+To disable API prefixes set the configuration `enabled` to `false` under `api` block.
+
 ### Controllers
 
 Be sure that your Controller was registred in `src/Providers/ControllerServiceProvider.php`  

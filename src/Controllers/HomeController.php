@@ -2,12 +2,14 @@
 
 namespace App\Controllers;
 
-use Symfony\Component\HttpFoundation\Response;
-
 class HomeController extends Controller
 {
     public function index()
     {
-        return 'Welcome to Silex !';
+        return $this->app['twig']->render('welcome.twig', [
+            'title' => 'Welcome page',
+            'appname' => $this->app['config']['application']['name'],
+            'welcome' => 'Welcome to Silex Arango Skeleton'
+        ]);
     }
 }

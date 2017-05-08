@@ -11,8 +11,8 @@ use triagens\ArangoDb\DocumentHandler;
 use triagens\ArangoDb\Collection;
 
 /**
- * Class Collection
- * @package App\Providers\Arango
+ * Class ArangoCollectionRepository
+ * @package App\Collections
  */
 abstract class ArangoCollectionRepository implements Validation
 {
