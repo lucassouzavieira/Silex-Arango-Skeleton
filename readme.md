@@ -12,22 +12,22 @@ Basic skeleton for applications using ArangoDB
 
 ### Installation
  Use composer:  
- 
+
  `composer create-project lvieira/silex-arango-skeleton MyAwesomeProject`  
- 
+
 * Set `public` folder as web root of your application  
-* Add your custom configurations to `app.yml` 
+* Add your custom configurations to `app.yml`
 * Let's code !
 
 ### Custom configurations  
 
-In file `app.yml` you can add your own configurations. 
+On the `app.yml` file you can add your own configurations.  
 To disable API prefixes set the configuration `enabled` to `false` under `api` block.
 
 ### Controllers
 
-Be sure that your Controller was registred in `src/Providers/ControllerServiceProvider.php`  
-Example: 
+Make sure your Controller is registered on `src/Providers/ControllerServiceProvider.php`  
+Example:
 
 ```
    $app['foo'] = function (Container $app) {
@@ -37,8 +37,8 @@ Example:
 
 ### Routes
 
-Routes are defined in `routes/routes.yml` file. Be careful with indentation.
-To define a route `foo` with action in 'FooController' and method `bar`, is just define here
+Routes are defined on `routes/routes.yml` file. Be careful while indenting.
+To define a route `foo` with action in 'FooController' and method `bar`, just define it as:
 
 ```
     foo/:  
@@ -46,7 +46,7 @@ To define a route `foo` with action in 'FooController' and method `bar`, is just
         to: foo:bar
 ```
 
-If you have any route parameters, you could pass them in route name:
+If you have any route parameters, you can pass it as:
 
 ```
     foo/{id}:
