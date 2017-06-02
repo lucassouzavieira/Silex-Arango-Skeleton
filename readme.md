@@ -53,3 +53,6 @@ If you have any route parameters, you can pass it as:
         method: get
         to: foo:bar
 ```
+### Using Docker  
+Put your custom configurations in `docker-compose.yml` file. Otherwise, you can simple run:  
+`docker-compose up` 
