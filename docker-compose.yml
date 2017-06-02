@@ -1,0 +1,25 @@
+# v2 syntax
+version: '2'
+
+services:
+
+  arangodb:
+    container_name: arangodb
+    image: arangodb/arangodb:3.1.21
+    environment:
+      - ARANGO_ROOT_PASSWORD=YourRootPassword
+    volumes:
+      - ./.docker/arangodb/database:/var/lib/arangodb
+      - ./.docker/arangodb/apps:/var/lib/arangodb-apps
+    ports:
+      - "3010:8529"
+
+  apache:
+    container_name: apache
+    image: ambientum/php:7.0-apache
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "3000:8080"
+    links:
+      - arangodb
