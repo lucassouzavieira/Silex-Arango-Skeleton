@@ -9,6 +9,7 @@ use triagens\ArangoDb\CollectionHandler;
 use triagens\ArangoDb\Document;
 use triagens\ArangoDb\DocumentHandler;
 use triagens\ArangoDb\Collection;
+use triagens\ArangoDb\ServerException;
 
 /**
  * Class ArangoCollectionRepository
@@ -17,7 +18,7 @@ use triagens\ArangoDb\Collection;
 abstract class ArangoCollectionRepository implements Validation
 {
     /**
-     * @var $collection Collection name
+     * @var string Collection name
      */
     public $collection;
 
@@ -64,12 +65,19 @@ abstract class ArangoCollectionRepository implements Validation
      * Returns a given document from Collection
      * @param $id
      * @return null|Document
+     * @throws ServerException
      */
     public function find($id)
     {
-        if ($this->documentHandler->has($this->collection, $id)) {
-            return $this->documentHandler->get($this->collection, $id);
-        };
+        try {
+            if ($this->documentHandler->has($this->collection, $id)) {
+                return $this->documentHandler->get($this->collection, $id);
+            };
+        } catch (ServerException $exception) {
+            if ($exception->getServerCode() != 1202) {
+                throw $exception;
+            }
+        }
 
         return null;
     }
@@ -125,5 +133,14 @@ abstract class ArangoCollectionRepository implements Validation
         }
 
         return null;
+    }
+
+    /**
+     * Collection name
+     * @return string
+     */
+    public function getCollection(): string
+    {
+        return $this->collection;
     }
 }
