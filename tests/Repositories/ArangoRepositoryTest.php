@@ -47,7 +47,7 @@ class ArangoRepositoryTest extends TestCase
     }
 
     /**
-     * Test validation method on Repository implementation
+     * Test validation method only for Repository implementation
      */
     public function testValidate()
     {
@@ -62,11 +62,14 @@ class ArangoRepositoryTest extends TestCase
         $this->assertTrue($this->repository->validate($document));
     }
 
-    public function testSaveDocument()
+    public function testAll()
     {
-        $document = $this->makeDocument();
+        $this->repository->save($this->makeDocument());
+        $this->repository->save($this->makeDocument());
 
-        $this->assertGreaterThan(0, $this->repository->save($document));
+        $all = $this->repository->all();
+        $this->assertInstanceOf('triagens\ArangoDb\Cursor', $all);
+        $this->assertEquals($all->getCount(), 2);
     }
 
     public function testFind()
@@ -78,16 +81,42 @@ class ArangoRepositoryTest extends TestCase
         $document = $this->repository->find($id);
 
         $this->assertInstanceOf('triagens\ArangoDb\Document', $document);
-        $this->assertNull($this->repository->find(random_int(1, 10)));
     }
 
-    public function testGetAll()
+    public function testSave()
     {
-        $this->repository->save($this->makeDocument());
-        $this->repository->save($this->makeDocument());
+        $document = $this->makeDocument();
 
-        $all = $this->repository->all();
-        $this->assertInstanceOf('triagens\ArangoDb\Cursor', $all);
-        $this->assertEquals($all->getCount(), 2);
+        $this->assertGreaterThan(0, $this->repository->save($document));
+    }
+
+    public function testUpdate()
+    {
+        $document = $this->makeDocument();
+
+        $id = $this->repository->save($document);
+        $document = $this->repository->find($id);
+        $this->assertInstanceOf('triagens\ArangoDb\Document', $document);
+
+        $beforeUpdate = $document->getAll();
+
+        $documentUpdated = $beforeUpdate;
+        $documentUpdated['newattribute'] = 'bar';
+
+        $this->repository->update($id, $documentUpdated);
+
+        $document = $this->repository->find($id);
+        $this->assertInstanceOf('triagens\ArangoDb\Document', $document);
+
+        $afterUpdate = $document->getAll();
+        $this->assertNotEquals($beforeUpdate, $afterUpdate);
+    }
+
+    public function testDelete()
+    {
+        $document = $this->makeDocument();
+        $id = $this->repository->save($document);
+
+        $this->assertTrue($this->repository->delete($id));
     }
 }
