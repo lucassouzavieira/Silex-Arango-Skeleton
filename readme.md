@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+=======
+[![Code Triagers Badge](https://www.codetriage.com/lucassouzavieira/silex-arango-skeleton/badges/users.svg)](https://www.codetriage.com/lucassouzavieira/silex-arango-skeleton)
+[![Build Status](https://travis-ci.org/lucassouzavieira/Silex-Arango-Skeleton.svg?branch=master)](https://travis-ci.org/lucassouzavieira/Silex-Arango-Skeleton)
+[![Coverage Status](https://coveralls.io/repos/github/lucassouzavieira/Silex-Arango-Skeleton/badge.svg?branch=master)](https://coveralls.io/github/lucassouzavieira/Silex-Arango-Skeleton?branch=master)
+
+>>>>>>> Stashed changes
 # Silex Arango Skeleton
 
 Basic skeleton for applications using ArangoDB
