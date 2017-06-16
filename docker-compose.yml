@@ -16,7 +16,7 @@ services:
 
   apache:
     container_name: apache
-    image: ambientum/php:7.0-apache
+    image: ambientum/php:7.1-apache
     volumes:
       - .:/var/www/app
     ports:

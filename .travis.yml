@@ -12,7 +12,7 @@ before_script:
   - cp app.travis.yml app.yml
   - composer self-update
   - composer install --no-interaction
-  - docker-compose up
+  - docker-compose up -d
 
 script:
   - vendor/bin/phpunit tests/
