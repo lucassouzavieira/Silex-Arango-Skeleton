@@ -1,0 +1,23 @@
+# Aplication configuration file
+
+application:
+  name: Skeleton
+  version: version
+  debug: true
+
+api:
+  prefix: api
+  version: v1
+  enabled: false
+
+arangodb:
+  database: dbname
+  host: 127.0.0.1
+  port: 8529
+  user: root
+  password: YourRootPassword
+  auth: Basic
+  connection: Close
+  timeout: 3
+  reconnect: true
+  create: true

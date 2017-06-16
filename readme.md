@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lucassouzavieira/Silex-Arango-Skeleton.svg?branch=master)](https://travis-ci.org/lucassouzavieira/Silex-Arango-Skeleton)
+
 # Silex Arango Skeleton
 
 Basic skeleton for applications using ArangoDB
