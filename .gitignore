@@ -1,3 +1,4 @@
 vendor/
 .idea/
 app.yml
+.php_cs.cache
