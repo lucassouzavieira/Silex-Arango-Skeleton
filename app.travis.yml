@@ -12,7 +12,7 @@ api:
 
 arangodb:
   database: dbname
-  host: localhost
+  host: arangodb
   port: 8529
   user: root
   password: YourRootPassword

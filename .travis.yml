@@ -13,6 +13,7 @@ before_script:
   - composer self-update
   - composer install --no-interaction
   - docker-compose up -d
+  - docker exec -it arangodb echo 'db._createDatabase("dbname");' |  arangosh --server.username root --server.password YourRootPassword
 
 script:
-  - vendor/bin/phpunit tests/
+  - docker exec -it apache vendor/bin/phpunit tests/
