@@ -13,7 +13,7 @@ before_script:
   - cp app.travis.yml app.yml
   - composer self-update
   - composer install --no-interaction
-  - docker run -it arangodb echo 'db._createDatabase("dbname");' |  arangosh --server.username root --server.password YourRootPassword
+  - docker exec -it arangodb sh -c "echo 'db._createDatabase("'"dbname"'");' |  arangosh --server.username root --server.password YourRootPassword"
 
 script:
-  - docker exec -it apache vendor/bin/phpunit tests/
+  - docker exec -it apache sh -c 'vendor/bin/phpunit tests/'
