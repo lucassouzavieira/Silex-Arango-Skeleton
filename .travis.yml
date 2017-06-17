@@ -9,10 +9,10 @@ php:
   - 7.1
 
 before_script:
+  - docker-compose up -d
   - cp app.travis.yml app.yml
   - composer self-update
   - composer install --no-interaction
-  - docker-compose up -d
   - docker exec -it arangodb echo 'db._createDatabase("dbname");' |  arangosh --server.username root --server.password YourRootPassword
 
 script:
