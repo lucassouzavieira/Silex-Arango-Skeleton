@@ -42,22 +42,8 @@ Example:
 
 ### Routes
 
-Routes are defined on `routes/routes.yml` file. Be careful while indenting.
-To define a route `foo` with action in 'FooController' and method `bar`, just define it as:
+Routes are defined on `routes/routes.php` file. 
 
-```
-    foo/:  
-        method: get  
-        to: foo:bar
-```
-
-If you have any route parameters, you can pass it as:
-
-```
-    foo/{id}:
-        method: get
-        to: foo:bar
-```
 ### Using Docker  
 Put your custom configurations in `docker-compose.yml` file. Otherwise, you can simple run:  
-`docker-compose up` 
+`docker-compose up`
